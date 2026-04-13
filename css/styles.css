@@ -1,27 +1,21 @@
-/* ========================================
-   global variables & brand colours
-   ========================================
+/* global variables & brand colours
+   locking in the exact hex codes so the entire site matches the design system.
 */
 :root {
     --bs-primary: #2C5E3B;
-    /* dark green */
     --bs-primary-rgb: 44, 94, 59;
 
     --bs-secondary: #8FBC8F;
-    /* light green */
     --bs-secondary-rgb: 143, 188, 143;
 
     --bs-body-bg: #FAFAFA;
-    /* off-white background */
     --bs-body-color: #333333;
-    /* standard dark grey text */
 
     --bs-body-font-family: 'Open Sans', system-ui, sans-serif;
 }
 
-/* ========================================
-   base layout & typography
-   ========================================
+/* base layout & typography
+   smooths out fonts and applies the off-white background globally
 */
 body {
     padding-bottom: 2rem;
@@ -49,9 +43,8 @@ a.text-decoration-none:hover {
     color: var(--bs-secondary);
 }
 
-/* ========================================
-   custom navbar styling
-   ========================================
+/* custom navbar styling
+   forces the light green background and sets custom link hover states
 */
 .custom-navbar {
     background-color: var(--bs-secondary) !important;
@@ -72,7 +65,7 @@ a.text-decoration-none:hover {
     transition: color 0.15s ease-in-out;
 }
 
-/* Updated hover and active state to your specific red */
+/* applies the specific red highlight for active and hovered navigation links */
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
     color: #D9534F !important;
@@ -88,9 +81,8 @@ a.text-decoration-none:hover {
     box-shadow: none;
 }
 
-/* ========================================
-   aggressive button overrides
-   ======================================== 
+/* aggressive button overrides
+   forces bootstrap to drop the default blue completely in favour of the brand green
 */
 .btn-primary {
     background-color: var(--bs-primary) !important;
@@ -111,9 +103,7 @@ a.text-decoration-none:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ========================================
-   custom components
-   ========================================
+/* custom components and grid utilities
 */
 .object-fit-cover {
     object-fit: cover;
@@ -126,6 +116,7 @@ a.text-decoration-none:hover {
     object-fit: cover;
 }
 
+/* adds a subtle lift and shadow interaction to the menu cards */
 .card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     border-radius: 12px;
@@ -140,7 +131,7 @@ a.text-decoration-none:hover {
     background-color: #FFFFFF !important;
 }
 
-/* custom horizontal footer styling */
+/* custom horizontal footer styling to strip bootstrap link defaults */
 footer a.text-decoration-none.text-dark {
     color: #000000 !important;
     transition: color 0.2s ease;
@@ -150,6 +141,7 @@ footer a.text-decoration-none.text-dark:hover {
     color: #D9534F !important;
 }
 
+/* social media placeholder styling */
 .social-circle {
     display: inline-block;
     width: 50px;
@@ -163,10 +155,11 @@ footer a.text-decoration-none.text-dark:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* ========================================
-   grouped media queries
-   ========================================
+/* consolidated media queries
+   all breakpoints are managed in this single location to prevent cascading issues
 */
+
+/* tablet layout adjustments */
 @media (max-width: 991px) {
 
     main h1,
@@ -182,6 +175,7 @@ footer a.text-decoration-none.text-dark:hover {
     }
 }
 
+/* mobile phone layout adjustments */
 @media (max-width: 768px) {
     body {
         padding-bottom: 1rem;
