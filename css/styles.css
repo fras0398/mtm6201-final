@@ -17,7 +17,6 @@
     --bs-body-color: #333333;
     /* standard dark grey text */
 
-    /* using a clean sans-serif to match the modern figma typography */
     --bs-body-font-family: 'Open Sans', system-ui, sans-serif;
 }
 
@@ -28,7 +27,6 @@
 body {
     padding-bottom: 2rem;
     -webkit-font-smoothing: antialiased;
-    /* makes text look sharper on standard displays */
 }
 
 /* ensuring all headings use the brand text colour */
@@ -46,7 +44,7 @@ h6 {
 a.text-decoration-none {
     color: var(--bs-primary);
     font-weight: bold;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 a.text-decoration-none:hover {
@@ -54,57 +52,14 @@ a.text-decoration-none:hover {
 }
 
 /* ========================================
-   custom components
-   ========================================
-*/
-/* forcing buttons to have a pill shape and slight shadow for that premium ui feel */
-.btn-primary {
-    border-radius: 50px;
-    padding: 0.75rem 2rem;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    background-color: var(--bs-secondary);
-    border-color: var(--bs-secondary);
-}
-
-/* forces the images inside the cards to fill their container perfectly */
-.object-fit-cover {
-    object-fit: cover;
-}
-
-/* subtle hover effect on the menu cards */
-.card {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border-radius: 12px;
-    /* rounding the card corners slightly */
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
-}
-
-/* specific styling for the white "read more" boxes on the menu page */
-.bg-white {
-    background-color: #FFFFFF !important;
-}
-
-/* ========================================
    custom navbar styling
    ========================================
-   overriding bootstrap defaults to match the figma prototype exactly.
+   matching the light green (#8fbc8f) header background from the prototype
 */
 .custom-navbar {
-    background-color: var(--bs-body-bg);
-    /* ensures it matches the #FAFAFA background */
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    background-color: var(--bs-secondary) !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .custom-navbar .navbar-brand {
@@ -113,21 +68,92 @@ a.text-decoration-none:hover {
     letter-spacing: -0.5px;
 }
 
+/* ensuring the nav links are visible and turn distinctly dark green on hover */
 .custom-navbar .nav-link {
-    color: var(--bs-body-color);
+    color: var(--bs-body-color) !important;
     font-weight: 500;
     margin-left: 1.5rem;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-/* changes the link to your dark green when hovered or active */
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
-    color: var(--bs-primary);
+    color: var(--bs-primary) !important;
+    font-weight: 700 !important;
 }
 
-/* mobile menu adjustments */
+/* ========================================
+   aggressive button overrides
+   ======================================== 
+   forcing bootstrap to drop the default blue completely
+*/
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: #FFFFFF !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 2.5rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+/* making the button distinctly darker when hovered */
+.btn-primary:hover {
+    background-color: #1B3A24 !important;
+    border-color: #1B3A24 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   custom components
+   ========================================
+*/
+/* forces images inside cards to fill their container perfectly */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* subtle hover effect on the menu cards */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* styling for the white "read more" boxes on the menu page */
+.bg-white {
+    background-color: #FFFFFF !important;
+}
+
+/* fixing the footer links to match the figma colours */
+footer a.text-decoration-none {
+    color: var(--bs-body-color) !important;
+    font-weight: normal !important;
+}
+
+footer a.text-decoration-none:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* ========================================
+   grouped media queries
+   ========================================
+*/
+/* tablet and down */
 @media (max-width: 991px) {
+
+    main h1,
+    main p.lead {
+        text-align: center;
+    }
+
     .custom-navbar .nav-link {
         margin-left: 0;
         padding-top: 0.75rem;
@@ -136,37 +162,16 @@ a.text-decoration-none:hover {
     }
 }
 
-/* ========================================
-   grouped media queries
-   ========================================
-   handling specific adjustments for tablet and mobile sizes 
-   that bootstrap grid classes don't cover.
-*/
-
-/* tablet and down */
-@media (max-width: 991px) {
-
-    /* centering the hero text on smaller screens when the layout stacks */
-    main h1,
-    main p.lead {
-        text-align: center;
-    }
-}
-
 /* mobile only */
 @media (max-width: 768px) {
-
-    /* making the bottom padding a bit tighter on mobile screens */
     body {
         padding-bottom: 1rem;
     }
 
-    /* scaling down the massive display heading on phones so it doesn't break to 4 lines */
     .display-4 {
         font-size: 2.5rem;
     }
 
-    /* tightening up the spacing on the reservation form images */
     .form-label {
         margin-top: 1rem;
     }
