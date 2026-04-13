@@ -96,6 +96,47 @@ a.text-decoration-none:hover {
 }
 
 /* ========================================
+   custom navbar styling
+   ========================================
+   overriding bootstrap defaults to match the figma prototype exactly.
+*/
+.custom-navbar {
+    background-color: var(--bs-body-bg);
+    /* ensures it matches the #FAFAFA background */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.custom-navbar .navbar-brand {
+    color: var(--bs-body-color);
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.custom-navbar .nav-link {
+    color: var(--bs-body-color);
+    font-weight: 500;
+    margin-left: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+/* changes the link to your dark green when hovered or active */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--bs-primary);
+}
+
+/* mobile menu adjustments */
+@media (max-width: 991px) {
+    .custom-navbar .nav-link {
+        margin-left: 0;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        text-align: center;
+    }
+}
+
+/* ========================================
    grouped media queries
    ========================================
    handling specific adjustments for tablet and mobile sizes 
