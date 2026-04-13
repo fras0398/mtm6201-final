@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- document setup and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Palette - Our Menu</title>
@@ -11,9 +12,11 @@
 
 <body>
 
+    <!-- skip links for keyboard accessibility -->
     <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
     <a href="#site-footer" class="visually-hidden-focusable">Skip to footer</a>
 
+    <!-- site header and navigation -->
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg shadow-sm custom-navbar" aria-label="Main navigation">
             <div class="container">
@@ -41,6 +44,7 @@
     </header>
 
     <main id="main-content">
+        <!-- hero section with background image and overlay -->
         <section class="container mt-5">
             <div class="d-flex flex-column justify-content-between text-start text-white p-4 p-md-5 rounded shadow-sm"
                 style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/hero-large.jpg') center/cover no-repeat; min-height: 450px;">
@@ -54,6 +58,7 @@
             </div>
         </section>
 
+        <!-- restaurant philosophy cards -->
         <section class="container mt-5 pt-2">
             <div class="row g-4">
                 <div class="col-md-6">
@@ -76,6 +81,7 @@
             </div>
         </section>
 
+        <!-- featured dish highlight -->
         <section class="container mt-5 pt-5">
             <div class="row align-items-center bg-white p-4 rounded shadow-sm">
                 <div class="col-lg-6 order-lg-2 text-center mb-4 mb-lg-0">
@@ -93,6 +99,7 @@
             </div>
         </section>
 
+        <!-- menu categories grid -->
         <section class="container mt-5 mb-5 pt-5" aria-labelledby="categories-heading">
             <div class="text-center mb-4">
                 <h2 id="categories-heading">Menu Sections</h2>
@@ -149,6 +156,7 @@
         </section>
     </main>
 
+    <!-- global site footer-->
     <footer id="site-footer" class="container mt-5 py-5 text-center">
         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4 fw-bold">
             <div class="d-flex flex-wrap justify-content-center gap-4 mb-3 mb-lg-0">
