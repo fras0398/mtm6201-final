@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                         <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
-                            <a class="btn btn-primary" href="#">Order Now</a>
+                            <a class="btn btn-primary" href="menu.html">Order Now</a>
                         </li>
                     </ul>
                 </div>
@@ -56,16 +56,14 @@
                 <div class="row g-4 text-center">
                     <div class="col-md-4">
                         <img src="./images/clock.jpg" alt="A minimalist wall clock showing the time"
-                            class="img-fluid mb-3 object-fit-cover shadow-sm rounded"
-                            style="height: 150px; width: 100%;">
+                            class="img-fluid mb-3 shadow-sm rounded square-img">
                         <label for="resTime" class="form-label fw-bold">Select Date & Time</label>
                         <input type="datetime-local" class="form-control" id="resTime" required>
                     </div>
 
                     <div class="col-md-4">
                         <img src="./images/dining.jpg" alt="People sharing a meal at a restaurant table"
-                            class="img-fluid mb-3 object-fit-cover shadow-sm rounded"
-                            style="height: 150px; width: 100%;">
+                            class="img-fluid mb-3 shadow-sm rounded square-img">
                         <label for="partySize" class="form-label fw-bold">Select Party Size</label>
                         <select class="form-select" id="partySize" required>
                             <option value="" selected disabled>Choose Here</option>
@@ -79,8 +77,7 @@
 
                     <div class="col-md-4">
                         <img src="./images/sticky.jpg" alt="A yellow sticky note pinned to a wall"
-                            class="img-fluid mb-3 object-fit-cover shadow-sm rounded"
-                            style="height: 150px; width: 100%;">
+                            class="img-fluid mb-3 shadow-sm rounded square-img">
                         <label for="specialReq" class="form-label fw-bold">Special Requests?</label>
                         <textarea class="form-control" id="specialReq" rows="1"
                             placeholder="e.g., Allergies or accessibility needs"></textarea>
@@ -94,28 +91,38 @@
         </section>
     </main>
 
-    <footer id="site-footer" class="container mt-5 py-5">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
-                <ul class="list-unstyled mb-0 lh-lg">
-                    <li><a href="index.html" class="text-decoration-none">Home</a></li>
-                    <li><a href="menu.html" class="text-decoration-none">Menu</a></li>
-                    <li><a href="reservations.html" class="text-decoration-none">Reservations</a></li>
-                </ul>
+    <footer id="site-footer" class="container mt-5 py-5 text-center">
+        <div class="row align-items-center mb-4 fw-bold">
+            <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start gap-4 mb-3 mb-lg-0">
+                <a href="index.html" class="text-decoration-none text-dark">Home</a>
+                <a href="menu.html" class="text-decoration-none text-dark">Menu</a>
+                <a href="reservations.html" class="text-decoration-none text-dark">Reservations</a>
             </div>
-            <div class="col-md-4 text-center mb-4 mb-md-0">
-                <h4 class="fw-bold mb-3" style="color: var(--bs-primary); letter-spacing: 1px;">PLANT PALETTE</h4>
-                <p class="mb-1 text-dark">2026</p>
-                <p class="mb-0 text-dark"><a href="#" class="text-decoration-none">Privacy</a> &nbsp; <a href="#"
-                        class="text-decoration-none">Terms</a></p>
+
+            <div class="col-lg-4 text-center mb-3 mb-lg-0">
+                <h2 class="fw-bold mb-0 text-dark" style="letter-spacing: 1px; font-size: 1.8rem;">PLANT PALETTE</h2>
             </div>
-            <div class="col-md-4 text-center text-md-end">
-                <ul class="list-unstyled mb-0 lh-lg">
-                    <li><a href="#" class="text-decoration-none">Events & Catering</a></li>
-                    <li><a href="#" class="text-decoration-none">About Us</a></li>
-                    <li><a href="#" class="text-decoration-none">Contact</a></li>
-                </ul>
+
+            <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end gap-4">
+                <a href="#" class="text-decoration-none text-dark">Events & Catering</a>
+                <a href="#" class="text-decoration-none text-dark">About Us</a>
+                <a href="#" class="text-decoration-none text-dark">Contact</a>
             </div>
+        </div>
+
+        <hr style="border-top: 1px solid #D9534F; opacity: 1;" class="mb-4">
+
+        <div class="mb-4 d-flex justify-content-center gap-3">
+            <span class="social-circle"></span>
+            <span class="social-circle"></span>
+            <span class="social-circle"></span>
+            <span class="social-circle"></span>
+            <span class="social-circle"></span>
+        </div>
+
+        <div class="text-dark d-flex justify-content-center gap-5">
+            <span>&copy; 2026</span>
+            <span>Privacy &mdash; Terms</span>
         </div>
     </footer>
 

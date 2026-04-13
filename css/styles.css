@@ -1,7 +1,6 @@
 /* ========================================
    global variables & brand colours
    ========================================
-   locking in the exact figma hex codes so the entire site matches.
 */
 :root {
     --bs-primary: #2C5E3B;
@@ -27,9 +26,9 @@
 body {
     padding-bottom: 2rem;
     -webkit-font-smoothing: antialiased;
+    background-color: var(--bs-body-bg);
 }
 
-/* ensuring all headings use the brand text colour */
 h1,
 h2,
 h3,
@@ -40,7 +39,6 @@ h6 {
     font-weight: 700;
 }
 
-/* updating standard link colours to use our custom dark green variable */
 a.text-decoration-none {
     color: var(--bs-primary);
     font-weight: bold;
@@ -54,7 +52,6 @@ a.text-decoration-none:hover {
 /* ========================================
    custom navbar styling
    ========================================
-   matching the light green (#8fbc8f) header background from the prototype
 */
 .custom-navbar {
     background-color: var(--bs-secondary) !important;
@@ -68,24 +65,32 @@ a.text-decoration-none:hover {
     letter-spacing: -0.5px;
 }
 
-/* ensuring the nav links are visible and turn distinctly dark green on hover */
 .custom-navbar .nav-link {
     color: var(--bs-body-color) !important;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 1.5rem;
-    transition: all 0.2s ease;
+    transition: color 0.15s ease-in-out;
 }
 
+/* Updated hover and active state to your specific red */
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
-    color: var(--bs-primary) !important;
-    font-weight: 700 !important;
+    color: #D9534F !important;
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    margin-left: auto;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 /* ========================================
    aggressive button overrides
    ======================================== 
-   forcing bootstrap to drop the default blue completely
 */
 .btn-primary {
     background-color: var(--bs-primary) !important;
@@ -98,7 +103,6 @@ a.text-decoration-none:hover {
     transition: all 0.2s ease-in-out;
 }
 
-/* making the button distinctly darker when hovered */
 .btn-primary:hover {
     background-color: #1B3A24 !important;
     border-color: #1B3A24 !important;
@@ -111,12 +115,17 @@ a.text-decoration-none:hover {
    custom components
    ========================================
 */
-/* forces images inside cards to fill their container perfectly */
 .object-fit-cover {
     object-fit: cover;
 }
 
-/* subtle hover effect on the menu cards */
+/* forces images to maintain a perfect 1:1 square ratio without squishing */
+.square-img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+}
+
 .card {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     border-radius: 12px;
@@ -127,26 +136,37 @@ a.text-decoration-none:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* styling for the white "read more" boxes on the menu page */
 .bg-white {
     background-color: #FFFFFF !important;
 }
 
-/* fixing the footer links to match the figma colours */
-footer a.text-decoration-none {
-    color: var(--bs-body-color) !important;
-    font-weight: normal !important;
+/* custom horizontal footer styling */
+footer a.text-decoration-none.text-dark {
+    color: #000000 !important;
+    transition: color 0.2s ease;
 }
 
-footer a.text-decoration-none:hover {
-    color: var(--bs-primary) !important;
+footer a.text-decoration-none.text-dark:hover {
+    color: #D9534F !important;
+}
+
+.social-circle {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.social-circle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ========================================
    grouped media queries
    ========================================
 */
-/* tablet and down */
 @media (max-width: 991px) {
 
     main h1,
@@ -162,7 +182,6 @@ footer a.text-decoration-none:hover {
     }
 }
 
-/* mobile only */
 @media (max-width: 768px) {
     body {
         padding-bottom: 1rem;
